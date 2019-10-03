@@ -1,2 +1,3 @@
 # mastering-magento-2
-Tutrial vom Udemy
+Tutorial from Udemy
+-> https://www.udemy.com/course/mastering-magento-2/
