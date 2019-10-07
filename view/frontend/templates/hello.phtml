@@ -4,7 +4,9 @@
 
 ?>
 
+<?php echo $block->getLabel(); ?>
 <?php foreach ($block->getItems() as $item): ?>
-
-<p><?php echo $item->getName(); ?>: <?php echo $item->getDescription() ?></p>
+<p>
+    <?php echo $item->getName(); ?>: <?php echo $item->getDescription() ?>
+</p>
 <?php endforeach; ?>
