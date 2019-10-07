@@ -8,4 +8,6 @@
             </arguments>
         </arguments>
     </type>
+    <preference for="Mastering\SampleModule\Api\Data\ItemInterface" type="Mastering\SampleModule\Model\Item" />
+    <preference for="Mastering\SampleModule\Api\ItemRepositoryInterface" type="Mastering\SampleModule\Model\ItemRepository" />
 </config>
