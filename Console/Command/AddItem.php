@@ -2,6 +2,8 @@
 
 namespace Mastering\SampleModule\Console\Command;
 
+use Magento\Framework\Event\ManagerInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,8 +15,6 @@ class AddItem extends Command
 {
     const INPUT_KEY_NAME = 'name';
     const INPUT_KEY_DESCRIPTION = 'description';
-
-    private $itemFactory;
 
     public function __construct(ItemFactory $itemFactory)
     {
@@ -44,6 +44,7 @@ class AddItem extends Command
         $item->setDescription($input->getArgument(self::INPUT_KEY_DESCRIPTION));
         $item->setIsObjectNew(true);
         $item->save();
+
         return Cli::RETURN_SUCCESS;
     }
 }
