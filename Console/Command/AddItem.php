@@ -2,8 +2,6 @@
 
 namespace Mastering\SampleModule\Console\Command;
 
-use Magento\Framework\Event\ManagerInterface;
-use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
