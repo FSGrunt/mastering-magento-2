@@ -9,8 +9,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Mastering\SampleModule\Model\ItemFactory;
 use Magento\Framework\Console\Cli;
 
-class AddItem extends Command{
-
+class AddItem extends Command
+{
     const INPUT_KEY_NAME = 'name';
     const INPUT_KEY_DESCRIPTION = 'description';
 
@@ -19,24 +19,21 @@ class AddItem extends Command{
     public function __construct(ItemFactory $itemFactory)
     {
         $this->itemFactory = $itemFactory;
-
         parent::__construct();
     }
 
     protected function configure()
     {
         $this->setName('mastering:item:add')
-        ->addArgument(
-            self::INPUT_KEY_NAME,
-            InputArgument::REQUIRED,
-            'Item name'
-        )
-        ->addArgument(
-            self::INPUT_KEY_DESCRIPTION,
-            InputArgument::REQUIRED,
-            'Item description'
-        );
-
+            ->addArgument(
+                self::INPUT_KEY_NAME,
+                InputArgument::REQUIRED,
+                'Item name'
+            )->addArgument(
+                self::INPUT_KEY_DESCRIPTION,
+                InputArgument::OPTIONAL,
+                'Item description'
+            );
         parent::configure();
     }
 
@@ -47,8 +44,6 @@ class AddItem extends Command{
         $item->setDescription($input->getArgument(self::INPUT_KEY_DESCRIPTION));
         $item->setIsObjectNew(true);
         $item->save();
-
         return Cli::RETURN_SUCCESS;
     }
-
 }
